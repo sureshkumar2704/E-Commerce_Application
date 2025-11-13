@@ -1,0 +1,112 @@
+.checkout-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.checkout-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.success-container {
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-xl);
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.success-icon {
+  color: #28a745;
+  margin-bottom: 1.5rem;
+}
+
+.success-container h1 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.success-container p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.continue-shopping-btn,
+.view-orders-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  min-width: 140px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.continue-shopping-btn {
+  background: var(--surface-primary);
+  color: var(--text-primary);
+}
+
+.continue-shopping-btn:hover {
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.view-orders-btn {
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-orders-btn:hover {
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 480px) {
+  .success-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .continue-shopping-btn,
+  .view-favourites-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

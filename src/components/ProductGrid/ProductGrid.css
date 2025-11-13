@@ -1,0 +1,113 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  animation: fadeIn 1s ease-out;
+}
+
+.product-grid-item {
+  animation: slideIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.product-grid-item:nth-child(1) { animation-delay: 0.1s; }
+.product-grid-item:nth-child(2) { animation-delay: 0.2s; }
+.product-grid-item:nth-child(3) { animation-delay: 0.3s; }
+.product-grid-item:nth-child(4) { animation-delay: 0.4s; }
+.product-grid-item:nth-child(5) { animation-delay: 0.5s; }
+.product-grid-item:nth-child(6) { animation-delay: 0.6s; }
+.product-grid-item:nth-child(7) { animation-delay: 0.7s; }
+.product-grid-item:nth-child(8) { animation-delay: 0.8s; }
+
+.no-products {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--glass-border);
+  grid-column: 1 / -1;
+  animation: fadeIn 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.no-products::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.no-products-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.no-products h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.no-products p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+  }
+
+  .no-products {
+    padding: 3rem 1.5rem;
+  }
+
+  .no-products h3 {
+    font-size: 1.3rem;
+  }
+
+  .no-products p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .no-products {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .no-products-icon {
+    font-size: 3rem;
+  }
+
+  .no-products h3 {
+    font-size: 1.2rem;
+  }
+
+  .no-products p {
+    font-size: 0.95rem;
+  }
+}
